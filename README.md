@@ -30,14 +30,52 @@ This repository contains the full code, trained models (tracked via **Git LFS**)
 ├── best_mobilenetv2_cifar10_weights.weights.h5  # tracked via Git LFS
 ├── Custom_CNN.ipynb
 └── MobileNetV2.ipynb
-
 ```
 
 > ⚠️ **Note:** The `.h5` and `.keras` files are large and tracked with **Git LFS**. Make sure you have Git LFS installed to clone or pull these files properly.
 
 ---
 
+## 📥 How to Clone This Repository
+
+1. **Install Git and Git LFS**
+
+```bash
+sudo apt install git git-lfs  # Linux
+brew install git git-lfs      # macOS
+```
+
+2. **Clone the repository**
+
+```bash
+git clone https://github.com/AlsoMeParth/CIFAR-10-CLASSIFICATION-Custom-CNN-vs.-Transfer-Learning-MobileNetV2-.git
+```
+
+3. **Navigate into the project directory**
+
+```bash
+cd your-repo
+```
+
+4. **Pull the large model files tracked via Git LFS**
+
+```bash
+git lfs pull
+```
+
+5. **Ensure the environment is set up**
+
+```bash
+conda create -n tf-env python=3.9
+conda activate tf-env
+pip install tensorflow keras matplotlib numpy Pillow
+git lfs install
+```
+
+---
+
 ## 🔎 Critical Finding: The Low-Res Domain Gap
+
 
 The most significant finding was the difference in how each model handled the data distribution. While MobileNetV2 achieved a higher average accuracy (~92%), it suffered a catastrophic failure on specific low-resolution images, demonstrating the limits of feature transfer.
 
