@@ -13,7 +13,7 @@ This project establishes a high-accuracy classification baseline for the CIFAR-1
 
 ## 📂 Project Structure
 
-This repository contains the full code, trained models, and critical test images:
+This repository contains the full code, trained models (tracked via **Git LFS**), and critical test images:
 
 ```
 .
@@ -25,19 +25,20 @@ This repository contains the full code, trained models, and critical test images
 │   ├── output-CNN-truck.png
 │   ├── output-MobileNetV2-cat.png
 │   └── output-MobileNetV2-truck.png
-├── cifar10_custom_cnn_baseline_88.63pct.keras  
-├── best_mobilenetv2_cifar10_weights.weights.h5
-├── Custom_CNN.ipynb                          
-└── MobileNetV2.ipynb                         
+├── cifar10_custom_cnn_baseline_88.63pct.keras  # tracked via Git LFS
+├── best_mobilenetv2_cifar10_weights.weights.h5  # tracked via Git LFS
+├── Custom_CNN.ipynb
+├── MobileNetV2.ipynb
+└── .gitattributes  # Git LFS configuration
 ```
+
+> ⚠️ **Note:** The `.h5` and `.keras` files are large and tracked with **Git LFS**. Make sure you have Git LFS installed to clone or pull these files properly.
 
 ---
 
 ## 🔎 Critical Finding: The Low-Res Domain Gap
 
 The most significant finding was the difference in how each model handled the data distribution. While MobileNetV2 achieved a higher average accuracy (~92%), it suffered a catastrophic failure on specific low-resolution images, demonstrating the limits of feature transfer.
-
-### Comparison: Low-Resolution Failure (Truck)
 
 |      Model      |        Prediction Output       |  Confidence |                             Result                            |
 | :-------------: | :----------------------------: | :---------: | :-----------------------------------------------------------: |
@@ -76,13 +77,16 @@ conda activate tf-env
 
 # Install core dependencies
 pip install tensorflow keras matplotlib numpy Pillow
+
+# Ensure Git LFS is installed
+git lfs install
 ```
 
 ---
 
 ## 📸 Using Your Own Images for Prediction
 
-You can test your own images with the pretrained models provided in this repository.
+You can test your own images with the pretrained models provided in this repository (tracked via Git LFS).
 
 ### 1. Load the Saved Models
 
@@ -131,8 +135,6 @@ print("MobileNetV2 Prediction:", np.argmax(mobilenet_pred), "with confidence", n
 ```
 
 > CIFAR-10 classes are: `[airplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck]`
-
-Now you can easily test how both models perform on **any custom image input**.
 
 ---
 
