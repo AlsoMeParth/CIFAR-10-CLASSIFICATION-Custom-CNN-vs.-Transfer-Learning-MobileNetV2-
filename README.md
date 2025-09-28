@@ -25,11 +25,12 @@ This repository contains the full code, trained models (tracked via **Git LFS**)
 │   ├── output-CNN-truck.png
 │   ├── output-MobileNetV2-cat.png
 │   └── output-MobileNetV2-truck.png
+├── .gitattributes # Git LFS configuration
 ├── cifar10_custom_cnn_baseline_88.63pct.keras  # tracked via Git LFS
 ├── best_mobilenetv2_cifar10_weights.weights.h5  # tracked via Git LFS
 ├── Custom_CNN.ipynb
-├── MobileNetV2.ipynb
-└── .gitattributes  # Git LFS configuration
+└── MobileNetV2.ipynb
+
 ```
 
 > ⚠️ **Note:** The `.h5` and `.keras` files are large and tracked with **Git LFS**. Make sure you have Git LFS installed to clone or pull these files properly.
